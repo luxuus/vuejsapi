@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {useRouter} from 'vue-router';
-const router = useRouter();
+  import {useRouter} from 'vue-router';
+  const router = useRouter();
 </script>
 
 <template>
@@ -8,10 +8,10 @@ const router = useRouter();
     <header>
       <h1 >The feed</h1>
       <nav>
-        <div @click="router.push('users')">Les membres</div>
-        <div @click="router.push('/')">Poster</div>
-        <div @click="router.push('/')">S'inscrire</div>
-        <div @click="router.push('/')">Se connecter</div>
+        <div @click="router.push('/users')">Les membres</div>
+        <div @click="router.push('/post')">Poster</div>
+        <div @click="router.push('/register')">S'inscrire</div>
+        <div @click="router.push('/login')">Se connecter</div>
       </nav>
     </header>
     <main>

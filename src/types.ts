@@ -10,5 +10,4 @@ export interface Publication{
     auteur: Utilisateur;
     message: string;
     datePublication: string;
-    premium: boolean;
 }
