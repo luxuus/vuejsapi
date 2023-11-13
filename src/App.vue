@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  import {useRouter} from 'vue-router';
+  import { useRouter } from 'vue-router';
+  import { storeAuthentification } from "@/store/storeAuthentification";
+  import { flashMessage } from "@smartweb/vue-flash-message"
   const router = useRouter();
 </script>
 
@@ -8,13 +10,14 @@
     <header>
       <h1 >The feed</h1>
       <nav>
-        <div @click="router.push('/users')">Les membres</div>
-        <div @click="router.push('/post')">Poster</div>
-        <div @click="router.push('/register')">S'inscrire</div>
-        <div @click="router.push('/login')">Se connecter</div>
+        <div @click="router.push({name: 'AllUsers'})">Les membres</div>
+        <div @click="router.push({name: 'feed'})">Poster</div>
+        <div v-if="!storeAuthentification.estConnecte" @click="router.push({name: 'register'})">S'inscrire</div>
+        <div v-if="!storeAuthentification.estConnecte" @click="router.push({name: 'login'})">Se connecter</div>
       </nav>
     </header>
     <main>
+      <FlashMessage />
       <router-view />
     </main>
   </div>

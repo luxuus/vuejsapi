@@ -3,6 +3,7 @@ import Feed from "@/views/Feed.vue"
 import AllUsers from "@/views/AllUsers.vue"
 import SingleMessage from "@/views/SingleMessage.vue"
 import SingleUser from "@/views/SingleUser.vue"
+import Login from "@/views/Login.vue"
 
 const router = createRouter({
   history: createWebHistory(''),
@@ -31,7 +32,11 @@ const router = createRouter({
       path: '/feed/:id',
       name: 'singleMessage',
       component: SingleMessage
-
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })

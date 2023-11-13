@@ -11,12 +11,12 @@ const props = defineProps<{publication:Publication}>();
   <div class="contentBox">
     <div class="top">
       <router-link :to="{name:'singleUser', params: {id: publication.auteur.id}}" class="clickable">
-        {{publication.auteur.login}}
+        {{ String(encodeURI(publication.auteur.login)) }}
       </router-link>
       -- {{(new Date(publication.datePublication)).toLocaleString("fr")}}
     </div>
     <div class="content clickable" @click="router.push({name:'singleMessage', params: {id: publication.id}})">
-      {{publication.message}}
+      {{ String(encodeURI(publication.message)) }}
     </div>
   </div>
 </template>
